@@ -1,8 +1,9 @@
 # Transparent Caching Server Control Plane V1.4 #
 
-These notes provide instructions to download and install the Laguna Transparent Caching Server Control Plane on a CentOS-7 Linux system.
+These notes provide instructions on howto download and install the Laguna Transparent Caching Server Control Plane on Linux CentOS-7 systems
 
 **Step-by-step guide**
+
 Firstly, create a working sandbox into which download and build the libraries and/or packages specified in steps 1-7 before attempting to build the TCS Control Plane application outlined in step 8 below.
  
 **1) [C YAML File Parser Library](http://pyyaml.org/wiki/LibYAML)**
