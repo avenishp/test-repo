@@ -71,7 +71,7 @@ Firstly, create a working sandbox into which download and build the libraries an
     sudo cp inc/liblfds611.h usr/local/include
     sudo cp bin/liblfds611.a /usr/local/lib
   
-**8) [C Prototyping Tools Library provides cp_mempool](cprops.sourceforge.net)**
+**8) [C Prototyping Tools Library provides cp_mempool](http://cprops.sourceforge.net)**
 
     Download http://sourceforge.net/projects/cprops/files/cprops/cprops-0.1.12/libcprops-0.1.12.tar.gz
     tar –zxvf libcprops-0.1.12.tar.gz
