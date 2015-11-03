@@ -2,11 +2,11 @@
 
 These notes provide instructions on howto download and install the Laguna Transparent Caching Server Control Plane on 64-bit Linux CentOS-7 systems. Ensure at least the *Compatibility libraries* and *Development Tools* group of packages are available on the build server, in addition others may be required--use *yum* to resolve these package dependencies.
 
-See centos7-scripts/SCRIPTS directory for scripts to help setup build and deployment systems.
+See *centos7-scripts/SCRIPTS* directory for scripts to help setup build and deployment systems.
 
 **Step-by-step guide**
 
-Firstly, create a working sandbox into which download and build the libraries and/or packages specified in steps 1-7 before attempting to build the TCS Control Plane application outlined in step 8 below.
+Firstly, create a working sandbox into which download and build the libraries and/or packages specified in steps 1-8 before attempting to build the TCS Control Plane application outlined in step 9 below.
  
 **1) [C YAML File Parser Library](http://pyyaml.org/wiki/LibYAML)**
 
@@ -71,7 +71,16 @@ Firstly, create a working sandbox into which download and build the libraries an
     sudo cp inc/liblfds611.h usr/local/include
     sudo cp bin/liblfds611.a /usr/local/lib
   
-**8) [C Transparent Caching Server Control Plane](https://github.com/concurrentlabs/laguna)**
+**8) [C Prototyping Tools Library provides cp_mempool](cprops.sourceforge.net)**
+
+    Download http://sourceforge.net/projects/cprops/files/cprops/cprops-0.1.12/libcprops-0.1.12.tar.gz
+    tar –zxvf libcprops-0.1.12.tar.gz
+    cd libcprops-0.1.12
+    ./configure
+    make
+    sudo make install && ldconfig
+
+**9) [C Transparent Caching Server Control Plane](https://github.com/concurrentlabs/laguna)**
 
     git clone https://github.com/concurrentlabs/laguna
     Ensure soft link /usr/lib64/libpcap.so -> libpcap.so.1.5.3 exists
@@ -79,6 +88,6 @@ Firstly, create a working sandbox into which download and build the libraries an
     make release
     make package
   
-**9) [Install TCS Package]()**
+**10) [Install TCS Package]()**
 
     rpm -ivh install/rpm/x86_64/release/RPMS/x86_64/transparent_caching-1.4.1-1.x86_64.rpm
