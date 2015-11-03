@@ -1,6 +1,8 @@
 # Transparent Caching Server Control Plane V1.4 #
 
-These notes provide instructions on howto download and install the Laguna Transparent Caching Server Control Plane on Linux CentOS-7 systems
+These notes provide instructions on howto download and install the Laguna Transparent Caching Server Control Plane on 64-bit Linux CentOS-7 systems. Ensure at least the *Compatibility libraries* and *Development Tools* group of packages are available on the build server, in addition others may be required--use *yum* to resolve these package dependencies.
+
+See centos7-scripts/SCRIPTS directory for scripts to help setup build and deployment systems.
 
 **Step-by-step guide**
 
@@ -31,7 +33,7 @@ Firstly, create a working sandbox into which download and build the libraries an
     make check
     sudo make install && ldconfig
   
-**4) [C ZeroMQ Distrubuted Messaging Library](http://zeromq.org)**
+**4) [ZeroMQ Distrubuted Messaging Library](http://zeromq.org)**
 
     Dowload zeromq http://download.zeromq.org/zeromq-4.1.3.tar.gz
     Make sure that libsodium, libtool, pkg-config, build-essential, autoconf, and automake are installed.
