@@ -12,7 +12,9 @@ See *centos7-scripts/SCRIPTS* directory for scripts to help setup build and depl
 `http://<edge proxy hostname address>/ccur/<site type>/<site target>/tcshost/<video server host address>/tcskey/<cache key id >/tcsopt/<options>/tcsosig/<original URL signature>`
 
 <center>
-<img src="https://github/avenishp/test-repo/raw/master/tcs/tcs_control_plane.png" alt="1">
+**TOPOLOGY**
+<center>
+<img src="https://github.com/avenishp/test-repo/raw/master/tcs/tcs_control_plane.png" alt="1">
 </center>
 
 
