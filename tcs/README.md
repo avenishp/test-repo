@@ -4,6 +4,19 @@ These notes provide instructions on howto download and install the Laguna Transp
 
 See *centos7-scripts/SCRIPTS* directory for scripts to help setup build and deployment systems.
 
+
+**About TCS Control Plane**
+- Out-of-bound architecture.
+- Analyzes URL signature pattern and performs interceptions by injecting RST/FIN to origin and 302 redirects to the cache/edge server.
+- Transmits 302 redirect information to reverse proxy, edge server or Transparent Caching Server(TCS) URL format:
+`http://<edge proxy hostname address>/ccur/<site type>/<site target>/tcshost/<video server host address>/tcskey/<cache key id >/tcsopt/<options>/tcsosig/<original URL signature>`
+
+
+![TCS Toplogy](https://github/avenishp/test-repo/tcs/tcs-control-plane.png)
+
+
+
+
 **Step-by-step guide**
 
 Firstly, create a working sandbox into which download and build the libraries and/or packages specified in steps 1-8 before attempting to build the TCS Control Plane application outlined in step 9 below.
@@ -91,3 +104,26 @@ Firstly, create a working sandbox into which download and build the libraries an
 **10) [Install TCS Package]()**
 
     rpm -ivh install/rpm/x86_64/release/RPMS/x86_64/transparent_caching-1.4.1-1.x86_64.rpm
+
+
+** Notes **
+**1) Building RPMs**
+- *make PFRING=1 package* or *make package* will an create RPM with pfring the as packet capture option
+- RPM location: <home dir>/install/rpm/x86_64/release/RPMS/x86_64/transparent_caching-x.x.x-x.x86_64.rpm
+
+**2) Configuration**
+- Modify */etc/sysconfig/transparent_caching/config.yaml* to specify redirect location, monitoring interface and outgoing interface
+- (optional) modify */etc/sysconfig/transparent_caching/trlog.conf* to direct "INFO" output results to console or file.
+
+**3) Running**
+- service [re]start transc
+- Play any youtube, netflix, etc site clip and check output log (/var/log/trservice.log and /var/log/trcomp.log).
+
+
+**libpcap support**
+- Add *PFRING=0* option to *make*, in order to build a libpcap version of control plane. EX: "make PFRING=0 package"
+
+**Misc info**
+- Valgrind vs liblfds:
+valgrind does not understand some of the instructions set pprovided by liblfds - lockless operations, this issue will be addressed on version liblfds v.7.0.0.
+http://www.liblfds.org/phpBB3/viewtopic.php?f=2&t=482
