@@ -6,13 +6,16 @@ See *centos7-scripts/SCRIPTS* directory for scripts to help setup build and depl
 
 
 **About TCS Control Plane**
-- Out-of-bound architecture.
-- Analyzes URL signature pattern and performs interceptions by injecting RST/FIN to origin and 302 redirects to the cache/edge server.
+- Supports an Out-of-bound architecture
+- Analyzes URL signature pattern and performs interceptions by injecting RST/FIN to origin and 302 redirects to the cache/edge server
 - Transmits 302 redirect information to reverse proxy, edge server or Transparent Caching Server(TCS) URL format:
 `http://<edge proxy hostname address>/ccur/<site type>/<site target>/tcshost/<video server host address>/tcskey/<cache key id >/tcsopt/<options>/tcsosig/<original URL signature>`
 
 <center>
 **TOPOLOGY**
+</center>
+
+<center>
 <img src="https://github.com/avenishp/test-repo/raw/master/tcs/tcs_control_plane.png" alt="1">
 </center>
 
