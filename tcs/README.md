@@ -13,10 +13,8 @@ See *centos7-scripts/SCRIPTS* directory for scripts to help setup build and depl
 
 <center>
 **TOPOLOGY**
-<center>
 <img src="https://github.com/avenishp/test-repo/raw/master/tcs/tcs_control_plane.png" alt="1">
 </center>
-
 
 **Step-by-step guide**
 
