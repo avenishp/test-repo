@@ -11,10 +11,9 @@ See *centos7-scripts/SCRIPTS* directory for scripts to help setup build and depl
 - Transmits 302 redirect information to reverse proxy, edge server or Transparent Caching Server(TCS) URL format:
 `http://<edge proxy hostname address>/ccur/<site type>/<site target>/tcshost/<video server host address>/tcskey/<cache key id >/tcsopt/<options>/tcsosig/<original URL signature>`
 
-
-![TCS Toplogy](https://github/avenishp/test-repo/tcs/tcs-control-plane.png)
-
-
+<center>
+<img src="https://github/avenishp/test-repo/raw/master/tcs/tcs_control_plane.png" alt="1">
+</center>
 
 
 **Step-by-step guide**
