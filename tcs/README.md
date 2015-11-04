@@ -109,6 +109,7 @@ Firstly, create a working sandbox into which download and build the libraries an
 
 
 ** Notes **
+
 **1) Building RPMs**
 - *make PFRING=1 package* or *make package* will an create RPM with pfring the as packet capture option
 - RPM location: <home dir>/install/rpm/x86_64/release/RPMS/x86_64/transparent_caching-x.x.x-x.x86_64.rpm
